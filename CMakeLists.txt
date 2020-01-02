@@ -20,6 +20,9 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -60,6 +63,9 @@ target_link_libraries(sensors_node playerc_imported)
 ament_target_dependencies(sensors_node
         rclcpp
         sensor_msgs
+        nav_msgs
+        tf2
+        tf2_ros
         )
 
 install(TARGETS
